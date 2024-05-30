@@ -32,9 +32,19 @@ function App() {
 
   return (
     <>
-      <div className="bg-red-400 underline">All Product</div>
-      <div className="grid grid-cols-6">
-        {products?.length && products.map((x) => <ProductCard data={x} />)}
+      <div>
+        <p className="underline text-2xl text-center">Products</p>
+        <div className="flex">
+          <div className="flex flex-col w-[20%]">
+            <p>Filters</p>
+            <div>
+              
+            </div>
+          </div>
+          <div className="grid grid-cols-6 gap-8 my-8 cursor-pointer flex-1">
+            {products?.length && products.map((x) => <ProductCard data={x} />)}
+          </div>
+        </div>
       </div>
     </>
   );
