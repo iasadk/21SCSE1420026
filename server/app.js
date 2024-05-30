@@ -6,6 +6,8 @@ require('dotenv/config');
 const morgan = require('morgan');
 const bodyParser = require('body-parser')
 const mainRoute = require("./routes/main.route");
+
+app.use(require('cors')({origin: '*'}));
 app.use(morgan('dev'));
 
 app.use(bodyParser.json({ limit: '100mb', type: 'application/json' }));

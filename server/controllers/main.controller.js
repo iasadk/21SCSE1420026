@@ -4,8 +4,6 @@ class mainController {
         try {
             const response = { data: null, message: "No Content Found", code: 200 };
             const srvRes = await service.list({ ...req.query, ...req.params });
-            console.log(srvRes,"RESSSSSSSSSSSSSs")
-
             if (srvRes.status) {
                 response.data = srvRes.data;
                 response.message = "Data Found";
@@ -13,6 +11,7 @@ class mainController {
             response.extra = srvRes.extra
             res.send(response)
         } catch (err) {
+            console.log(err)
             throw new Error(err)
         }
     }
